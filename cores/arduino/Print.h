@@ -58,6 +58,8 @@ class Print
     // should be overriden by subclasses with buffering
     virtual int availableForWrite() { return 0; }
 
+    size_t vprintf(const char *format, va_list arg);
+    size_t printf(const char *format, ...);
     size_t print(const __FlashStringHelper *);
     size_t print(const String &);
     size_t print(const char[]);
